@@ -1,0 +1,45 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+defaultContentLanguage = "en-us"
+title = "My New Hugo Site"
+theme= "tranquilpeak"
+
+[[menu.main]]
+  weight = 0
+  identifier = "home"
+  name = "Home"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-home\"></i>"
+  url = "/"
+
+[[menu.main]]
+  weight = 4
+  identifier = "about"
+  name = "About"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-question\"></i>"
+  url = "/#about"
+
+[[menu.links]]
+  weight = 0
+  identifier = "github"
+  name = "GitHub"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-github\"></i>"
+  url = "https://github.com/avinash0161"
+
+[[menu.links]]
+  weight = 1
+  identifier = "stackoverflow"
+  name = "Stack Overflow"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-stack-overflow\"></i>"
+  url = "https://stackoverflow.com/users/648290/avinash"
+
+
+[author]
+  name = "Avinash Kumar"
+  bio = "Super bio with markdown support **COOL**"
+  job = "PhD student at UC Irvine"
+  location = "Irvine, CA"
+  # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
+  #gravatarEmail = "avinash DOT kumar AT uci DOT edu"
+  # Your profile picture
+  # Overwritten by your gravatar image if `author.gravatarEmail` is filled
+  picture = "https://docs.google.com/drawings/d/e/2PACX-1vS0QvkkeEF3nBWAby13n9lIfEHBmmmC9ziIz6iFaZTsnCIqF3KuQ0cC5fF6dEf6E1lbx7xKEMEboNtX/pub?w=480&h=360"

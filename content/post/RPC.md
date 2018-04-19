@@ -1,11 +1,11 @@
 ---
-title: "Hello World of Remote Procedural Call (RPC)"
+title: "Simple Overview of Remote Procedure Call (RPC)"
 date: 2018-04-09
 categories:
-  - client-server
+  - Client-Server
 tags:
-  - rpc
-  - server
+  - RPC
+  - Server
 #thumbnailImagePosition: left
 #thumbnailImage: //d1u9biwaxjngwg.cloudfront.net/highlighted-code-showcase/peak-140.jpg
 ---

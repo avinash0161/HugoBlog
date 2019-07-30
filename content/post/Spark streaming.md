@@ -26,6 +26,11 @@ In the traditional continuous operator model, the continuous operator is statica
 
 > In the traditional record-at-a-time approach taken by most other systems, if one of the partitions is more computationally intensive than the others, the node statically assigned to process that partition will become a bottleneck and slow down the pipeline. In Spark Streaming, the job’s tasks will be naturally load balanced across the workers — some workers will process a few longer tasks, others will process more of the shorter tasks.
 
+3. Since every batch is an RDD (distributed dataset), the Spark streaming batch is interoperable with pre-computed static dataset. It can be joined and all spark functions that are possible on a static RDD can be done on it.
+
+*Limitation:* Spark streaming admits to not handling out-of-order data.  They promise to add support for this later.
+> In practice, users sometimes have records that are delivered out of order, or with a timestamp that differs from the time of ingestion. Spark streaming will support "event time" by allowing user-defined time extraction function. This will include a slack duration for late or out-of-order data.
+
 
 
 

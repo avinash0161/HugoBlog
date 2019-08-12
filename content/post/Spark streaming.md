@@ -10,9 +10,12 @@ tags:
 
 ### References
 - https://databricks.com/blog/2015/07/30/diving-into-apache-spark-streamings-execution-model.html
+- http://cs.brown.edu/~ugur/8rulesSigRec.pdf
 
 
 ### Let's start
+**The 8 requirements of real-time stream processing**. (1) Keep data moving - There should be no storage in the critical processing path. The processing should be active (event-based) rather than passive (polling-based). (2) Support for SQL on streams - Apart from general SQL queries, streams need special queries like 'Merge' (to merge two streams in ascending time order), that are only there for streams. Also, there needs to be a concept of window, over which aggregates can be computed. There needs to be a way to handle delayed, missing and out-of-order data when using windows and that is also the third requirement. (3) Handle stream imperfections (missing, delayed and out of order data) - Mostly time-outs are used to handle delayed data. Some systems like Apache Samza [re-emit the output of the window/s that are impacted by the late arrival](https://engineering.linkedin.com/blog/2016/06/stream-processing-hard-problems-part-1-killing-lambda). (4) Generate predictable outcomes - This means ensuring time ordered and deterministic processing throughout the pipeline. Generating predictable outcomes is also necessary for being able to replay and reprocess input stream for fault tolerance and recovery. (5) 
+
 **Traditional Stream processing engines** use continuous operators that  process the streaming data one record at a time and forwards the records to other operators in the pipeline. They do this to minimize the latency (between input of a record and output of results). This causes a few issues as mentioned in [Models and Issues in Data Stream Systems](https://infolab.usc.edu/csci599/Fall2002/paper/DML2_streams-issues.pdf "Models and Issues in Data Stream Systems").
 
 - (How does it not face the issue that we faces which forced us to do batching)
